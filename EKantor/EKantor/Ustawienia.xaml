@@ -1,0 +1,16 @@
+﻿<Window x:Class="EKantor.Ustawienia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EKantor"
+        mc:Ignorable="d"
+        Title="Ustawienia" Height="450" Width="800">
+    <Grid>
+        <Label Content="Wyzeruj wszystkie dane:" HorizontalAlignment="Left" Margin="111,72,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <CheckBox x:Name="CheckBoxNaPewnoReset" Content="Zaznacz jesli na pewno tego chcesz." HorizontalAlignment="Left" Margin="353,80,0,0" VerticalAlignment="Top" FontSize="18" Checked="CheckBoxNaPewnoReset_Checked" Unchecked="CheckBoxNaPewnoReset_Unchecked"/>
+        <Button x:Name="btnResetuj" Content="RESETUJ" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" FontSize="20" Visibility="Hidden"/>
+        <Button x:Name="btnPowrot" Content="Powrót" HorizontalAlignment="Center" Margin="0,306,0,0" VerticalAlignment="Top" FontSize="22" Height="39" Width="112" Click="btnPowrot_Click"/>
+
+    </Grid>
+</Window>
