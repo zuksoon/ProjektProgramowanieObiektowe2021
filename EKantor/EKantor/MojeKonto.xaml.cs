@@ -191,5 +191,23 @@ namespace EKantor
             this.Close();
 
         }
+
+        private void btnKup_Click(object sender, RoutedEventArgs e)
+        {
+            Kup kup = new Kup();
+            kup.ShowDialog();
+            if (kup.DialogResult == false)
+            {
+                MessageBox.Show("Zakup waluty został anulowany.");
+            }
+            else
+            {
+                MessageBox.Show("Zakup waluty przebiegł pomyślnie.");
+                //na około ale nie znalałem funkcji odświeżenia okna
+                MojeKonto newWindow = new MojeKonto();
+                newWindow.Show();
+                this.Close();
+            }
+        }
     }
 }

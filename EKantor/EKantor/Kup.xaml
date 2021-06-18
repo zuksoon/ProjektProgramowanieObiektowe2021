@@ -9,18 +9,18 @@
     <Grid>
         <Label Content="Wolne Środki" HorizontalAlignment="Left" Margin="121,39,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="TextBoxWolneSrodki" HorizontalAlignment="Left" Margin="239,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <RadioButton x:Name="RBEuro" Content="Euro" HorizontalAlignment="Left" Margin="33,123,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <RadioButton x:Name="RBDolar" Content="Dolar" HorizontalAlignment="Left" Margin="33,176,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <RadioButton x:Name="RBFrank" Content="Frank" HorizontalAlignment="Left" Margin="33,227,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <RadioButton x:Name="RBEuro" Content="Euro" HorizontalAlignment="Left" Margin="33,123,0,0" VerticalAlignment="Top" FontSize="16" Checked="RBEuro_Checked"/>
+        <RadioButton x:Name="RBDolar" Content="Dolar" HorizontalAlignment="Left" Margin="33,176,0,0" VerticalAlignment="Top" FontSize="16" Checked="RBDolar_Checked"/>
+        <RadioButton x:Name="RBFunt" Content="Funt" HorizontalAlignment="Left" Margin="33,227,0,0" VerticalAlignment="Top" FontSize="16" Checked="RBFunt_Checked"/>
         <Label Content="Ilość w walucie" HorizontalAlignment="Left" Margin="173,86,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Cena" HorizontalAlignment="Left" Margin="358,86,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="TextBoxIloscEuro" HorizontalAlignment="Left" Margin="167,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="TextBoxIloscDolar" HorizontalAlignment="Left" Margin="167,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="TextBoxIloscFrank" HorizontalAlignment="Left" Margin="167,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="TextBoxCenaEuro" HorizontalAlignment="Left" Margin="321,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="TextBoxCenaDolar" HorizontalAlignment="Left" Margin="321,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <TextBox x:Name="TextBoxCenaFrank" HorizontalAlignment="Left" Margin="321,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
-        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="371,307,0,0" VerticalAlignment="Top" FontSize="18" Width="70"/>
+        <TextBox x:Name="TextBoxIloscEuro" HorizontalAlignment="Left" Margin="167,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscEuro_TextChanged"/>
+        <TextBox x:Name="TextBoxIloscDolar" HorizontalAlignment="Left" Margin="167,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscDolar_TextChanged"/>
+        <TextBox x:Name="TextBoxIloscFunt" HorizontalAlignment="Left" Margin="167,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscFunt_TextChanged"/>
+        <TextBox x:Name="TextBoxCenaEuro" HorizontalAlignment="Left" Margin="321,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaEuro_TextChanged"/>
+        <TextBox x:Name="TextBoxCenaDolar" HorizontalAlignment="Left" Margin="321,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaDolar_TextChanged"/>
+        <TextBox x:Name="TextBoxCenaFunt" HorizontalAlignment="Left" Margin="321,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaFunt_TextChanged"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="371,307,0,0" VerticalAlignment="Top" FontSize="18" Width="70" Click="btnOK_Click"/>
         <Button x:Name="btnAnuluj" Content="Anuluj" HorizontalAlignment="Left" Margin="103,307,0,0" VerticalAlignment="Top" FontSize="18" Width="70" Click="btnAnuluj_Click"/>
 
     </Grid>

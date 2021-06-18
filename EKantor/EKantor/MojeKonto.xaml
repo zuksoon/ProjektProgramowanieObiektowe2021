@@ -31,7 +31,7 @@
         <TextBox x:Name="TextBoxFuntCenaSprzedazy" HorizontalAlignment="Left" Margin="263,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBoxFuntRoznica" HorizontalAlignment="Left" Margin="417,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="TextBoxFuntPosiadanaIlosc" HorizontalAlignment="Left" Margin="572,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnKup" Content="Kup" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" FontSize="18" Width="98"/>
+        <Button x:Name="btnKup" Content="Kup" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" FontSize="18" Width="98" Click="btnKup_Click"/>
         <Button x:Name="btnSprzedaj" Content="Sprzedaj" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" FontSize="18" Width="98"/>
         <Button x:Name="btnNastepnyDzien" Content="Następny dzień --&gt;" HorizontalAlignment="Left" Margin="590,336,0,0" VerticalAlignment="Top" FontSize="18" Width="168" Click="btnNastepnyDzien_Click"/>
         <Button x:Name="btnPowrotMenu" Content="Powrót do menu" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" FontSize="18" Click="btnPowrotMenu_Click"/>

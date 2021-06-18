@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Wyzeruj wszystkie dane:" HorizontalAlignment="Left" Margin="111,72,0,0" VerticalAlignment="Top" FontSize="20"/>
         <CheckBox x:Name="CheckBoxNaPewnoReset" Content="Zaznacz jesli na pewno tego chcesz." HorizontalAlignment="Left" Margin="353,80,0,0" VerticalAlignment="Top" FontSize="18" Checked="CheckBoxNaPewnoReset_Checked" Unchecked="CheckBoxNaPewnoReset_Unchecked"/>
-        <Button x:Name="btnResetuj" Content="RESETUJ" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" FontSize="20" Visibility="Hidden"/>
+        <Button x:Name="btnResetuj" Content="RESETUJ" HorizontalAlignment="Center" Margin="0,146,0,0" VerticalAlignment="Top" FontSize="20" Click="btnResetuj_Click" Visibility="Hidden" />
         <Button x:Name="btnPowrot" Content="Powrót" HorizontalAlignment="Center" Margin="0,306,0,0" VerticalAlignment="Top" FontSize="22" Height="39" Width="112" Click="btnPowrot_Click"/>
 
     </Grid>
