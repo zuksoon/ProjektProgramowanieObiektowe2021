@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace EKantor
 {
@@ -57,6 +58,16 @@ namespace EKantor
 
                         Zasoby[0] = (float.Parse(Zasoby[0]) - float.Parse(TextBoxCenaEuro.Text)).ToString();
                         Zasoby[1] = (float.Parse(Zasoby[1]) + float.Parse(TextBoxIloscEuro.Text)).ToString();
+
+                        StreamWriter swZ = File.CreateText("Zasoby.txt");
+                        swZ.WriteLine(Zasoby[0]);
+                        swZ.WriteLine(Zasoby[1]);
+                        swZ.WriteLine(Zasoby[2]);
+                        swZ.WriteLine(Zasoby[3]);
+                        swZ.Close();
+
+                        this.DialogResult = true;
+                        this.Close();
                     }
                     catch (Exception)
                     {
@@ -73,6 +84,16 @@ namespace EKantor
 
                         Zasoby[0] = (float.Parse(Zasoby[0]) - float.Parse(TextBoxCenaDolar.Text)).ToString();
                         Zasoby[2] = (float.Parse(Zasoby[2]) + float.Parse(TextBoxIloscDolar.Text)).ToString();
+
+                        StreamWriter swZ = File.CreateText("Zasoby.txt");
+                        swZ.WriteLine(Zasoby[0]);
+                        swZ.WriteLine(Zasoby[1]);
+                        swZ.WriteLine(Zasoby[2]);
+                        swZ.WriteLine(Zasoby[3]);
+                        swZ.Close();
+
+                        this.DialogResult = true;
+                        this.Close();
                     }
                     catch (Exception)
                     {
@@ -88,7 +109,17 @@ namespace EKantor
                         float.Parse(TextBoxIloscFunt.Text);
 
                         Zasoby[0] = (float.Parse(Zasoby[0]) - float.Parse(TextBoxCenaFunt.Text)).ToString();
-                        Zasoby[2] = (float.Parse(Zasoby[3]) + float.Parse(TextBoxIloscFunt.Text)).ToString();
+                        Zasoby[3] = (float.Parse(Zasoby[3]) + float.Parse(TextBoxIloscFunt.Text)).ToString();
+
+                        StreamWriter swZ = File.CreateText("Zasoby.txt");
+                        swZ.WriteLine(Zasoby[0]);
+                        swZ.WriteLine(Zasoby[1]);
+                        swZ.WriteLine(Zasoby[2]);
+                        swZ.WriteLine(Zasoby[3]);
+                        swZ.Close();
+
+                        this.DialogResult = true;
+                        this.Close();
                     }
                     catch (Exception)
                     {
@@ -159,7 +190,17 @@ namespace EKantor
         {
             try
             {
-                TextBoxCenaEuro.Text = (float.Parse(TextBoxIloscEuro.Text) * CenaZakupuEuro).ToString();
+                float sprIlosc = (float.Parse(TextBoxIloscEuro.Text) * CenaZakupuEuro);
+                if (sprIlosc <= float.Parse(Zasoby[0]))
+                {
+                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIloscEuro.Text) * CenaZakupuEuro).ToString();
+                }
+                if (sprIlosc > float.Parse(Zasoby[0]))
+                {
+                    MessageBox.Show("Cena okazała się większa niż twój portfel jest w stanie udzwignąć.");
+                    TextBoxIloscEuro.Text = "0";
+                    TextBoxCenaEuro.Text = "0";
+                }
             }
             catch (Exception)
             {
@@ -172,7 +213,7 @@ namespace EKantor
         {
             try
             {
-                float sprIlosc = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro);
+                float sprIlosc = float.Parse(TextBoxCenaEuro.Text);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
                     TextBoxIloscEuro.Text = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro).ToString();
@@ -193,7 +234,17 @@ namespace EKantor
         {
             try
             {
-                TextBoxCenaDolar.Text = (float.Parse(TextBoxIloscDolar.Text) * CenaZakupuDolara).ToString();
+                float sprIlosc = (float.Parse(TextBoxIloscDolar.Text) * CenaZakupuDolara);
+                if (sprIlosc <= float.Parse(Zasoby[0]))
+                {
+                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIloscDolar.Text) * CenaZakupuDolara).ToString();
+                }
+                if (sprIlosc > float.Parse(Zasoby[0]))
+                {
+                    MessageBox.Show("Cena okazała się większa niż twój portfel jest w stanie udzwignąć.");
+                    TextBoxIloscDolar.Text = "0";
+                    TextBoxCenaDolar.Text = "0";
+                }
             }
             catch (Exception)
             {
@@ -206,7 +257,7 @@ namespace EKantor
         {
             try
             {
-                float sprIlosc = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro);
+                float sprIlosc = float.Parse(TextBoxCenaEuro.Text);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
                     TextBoxIloscEuro.Text = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro).ToString();
@@ -227,7 +278,17 @@ namespace EKantor
         {
             try
             {
-                TextBoxCenaFunt.Text = (float.Parse(TextBoxIloscFunt.Text) * CenaZakupuFunta).ToString();
+                float sprIlosc = (float.Parse(TextBoxIloscFunt.Text) * CenaZakupuFunta);
+                if (sprIlosc <= float.Parse(Zasoby[0]))
+                {
+                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIloscFunt.Text) * CenaZakupuFunta).ToString();
+                }
+                if (sprIlosc > float.Parse(Zasoby[0]))
+                {
+                    MessageBox.Show("Cena okazała się większa niż twój portfel jest w stanie udzwignąć.");
+                    TextBoxIloscFunt.Text = "0";
+                    TextBoxCenaFunt.Text = "0";
+                }
             }
             catch (Exception)
             {
@@ -240,7 +301,7 @@ namespace EKantor
         {
             try
             {
-                float sprIlosc = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro);
+                float sprIlosc = float.Parse(TextBoxCenaEuro.Text);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
                     TextBoxIloscEuro.Text = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro).ToString();
