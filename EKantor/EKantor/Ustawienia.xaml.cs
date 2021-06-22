@@ -51,7 +51,7 @@ namespace EKantor
         private void btnResetuj_Click(object sender, RoutedEventArgs e)
         {
             string[] ResetCeny = System.IO.File.ReadAllLines("CenowyDefault.txt");
-            string[] ResetZasoby = System.IO.File.ReadAllLines("ZasobyDefualt.txt");
+            string[] ResetZasoby = System.IO.File.ReadAllLines("ZasobyDefault.txt");
 
             ///resetowanie Zasobów
             StreamWriter swZ = File.CreateText("Zasoby.txt");

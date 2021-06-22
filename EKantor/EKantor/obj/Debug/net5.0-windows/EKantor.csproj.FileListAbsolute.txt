@@ -30,3 +30,5 @@ C:\Users\junzu\Desktop\ProjektProgObiekt\EKantor\EKantor\obj\Debug\net5.0-window
 C:\Users\junzu\Desktop\ProjektProgObiekt\EKantor\EKantor\obj\Debug\net5.0-windows\Wyplac.baml
 C:\Users\junzu\Desktop\ProjektProgObiekt\EKantor\EKantor\obj\Debug\net5.0-windows\Kup.g.cs
 C:\Users\junzu\Desktop\ProjektProgObiekt\EKantor\EKantor\obj\Debug\net5.0-windows\Kup.baml
+C:\Users\junzu\Desktop\ProjektProgObiekt\EKantor\EKantor\obj\Debug\net5.0-windows\Sprzedaj.g.cs
+C:\Users\junzu\Desktop\ProjektProgObiekt\EKantor\EKantor\obj\Debug\net5.0-windows\Sprzedaj.baml

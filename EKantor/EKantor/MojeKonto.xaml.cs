@@ -209,5 +209,23 @@ namespace EKantor
                 this.Close();
             }
         }
+
+        private void btnSprzedaj_Click(object sender, RoutedEventArgs e)
+        {
+            Sprzedaj sprzedaj = new Sprzedaj();
+            sprzedaj.ShowDialog();
+            if (sprzedaj.DialogResult == false)
+            {
+                MessageBox.Show("Sprzedaż waluty została anulowana.");
+            }
+            else
+            {
+                MessageBox.Show("Sprzedaż waluty przebiegła pomyślnie.");
+                //na około ale nie znalałem funkcji odświeżenia okna
+                MojeKonto newWindow = new MojeKonto();
+                newWindow.Show();
+                this.Close();
+            }
+        }
     }
 }
