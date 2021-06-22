@@ -116,10 +116,10 @@ namespace EKantor
                 {
                     /// wykonanie 2 poniższych linni dla sprawdzenia poprawności wartości
                     float.Parse(TextBoxCenaEuro.Text);
-                    float.Parse(TextBoxIloscEuro.Text);
+                    float.Parse(TextBoxIleSprzedacEuro.Text);
 
                     Zasoby[0] = (float.Parse(Zasoby[0]) + float.Parse(TextBoxCenaEuro.Text)).ToString();
-                    Zasoby[1] = (float.Parse(Zasoby[1]) - float.Parse(TextBoxIloscEuro.Text)).ToString();
+                    Zasoby[1] = (float.Parse(Zasoby[1]) - float.Parse(TextBoxIleSprzedacEuro.Text)).ToString();
 
                     StreamWriter swZ = File.CreateText("Zasoby.txt");
                     swZ.WriteLine(Zasoby[0]);
@@ -136,6 +136,64 @@ namespace EKantor
                     MessageBox.Show("Wprowadzono niepoprawne dane i nie można wykonać operacji, nalezy wprowadzić cyfrę!");
                 }
             }
+
+            if (RBDolar.IsChecked == true)
+            {
+                try
+                {
+                    /// wykonanie 2 poniższych linni dla sprawdzenia poprawności wartości
+                    float.Parse(TextBoxCenaDolar.Text);
+                    float.Parse(TextBoxIleSprzedacDolar.Text);
+
+                    Zasoby[0] = (float.Parse(Zasoby[0]) + float.Parse(TextBoxCenaEuro.Text)).ToString();
+                    Zasoby[1] = (float.Parse(Zasoby[2]) - float.Parse(TextBoxIleSprzedacEuro.Text)).ToString();
+
+                    StreamWriter swZ = File.CreateText("Zasoby.txt");
+                    swZ.WriteLine(Zasoby[0]);
+                    swZ.WriteLine(Zasoby[1]);
+                    swZ.WriteLine(Zasoby[2]);
+                    swZ.WriteLine(Zasoby[3]);
+                    swZ.Close();
+
+                    this.DialogResult = true;
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Wprowadzono niepoprawne dane i nie można wykonać operacji, nalezy wprowadzić cyfrę!");
+                }
+            }
+
+            if (RBFunt.IsChecked == true)
+            {
+                try
+                {
+                    /// wykonanie 2 poniższych linni dla sprawdzenia poprawności wartości
+                    float.Parse(TextBoxCenaFunt.Text);
+                    float.Parse(TextBoxIleSprzedacFunt.Text);
+
+                    Zasoby[0] = (float.Parse(Zasoby[0]) + float.Parse(TextBoxCenaFunt.Text)).ToString();
+                    Zasoby[1] = (float.Parse(Zasoby[2]) - float.Parse(TextBoxIleSprzedacFunt.Text)).ToString();
+
+                    StreamWriter swZ = File.CreateText("Zasoby.txt");
+                    swZ.WriteLine(Zasoby[0]);
+                    swZ.WriteLine(Zasoby[1]);
+                    swZ.WriteLine(Zasoby[2]);
+                    swZ.WriteLine(Zasoby[3]);
+                    swZ.Close();
+
+                    this.DialogResult = true;
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Wprowadzono niepoprawne dane i nie można wykonać operacji, nalezy wprowadzić cyfrę!");
+                }
+            }
+            if (RBEuro.IsChecked == false && RBDolar.IsChecked == false && RBFunt.IsChecked == false)
+            {
+                MessageBox.Show(" Wybierz którą walutę chcesz kupić, a następnie wpisz ile chcesz danej waluty lub ile chcesz zapłacić.");
+            }
         }
 
 
@@ -151,7 +209,7 @@ namespace EKantor
 
         private void TextBoxIloscDolar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (float.Parse(TextBoxIloscEuro.Text) != float.Parse(Zasoby[1]))
+            if (float.Parse(TextBoxIloscDolar.Text) != float.Parse(Zasoby[2]))
             {
                 MessageBox.Show("Masz tyle ile zakupiłeś! Zostaw tego Boxa w spokoju...");
                 TextBoxIloscDolar.Text = Zasoby[1].ToString();
@@ -160,7 +218,7 @@ namespace EKantor
 
         private void TextBoxIloscFunt_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (float.Parse(TextBoxIloscEuro.Text) != float.Parse(Zasoby[1]))
+            if (float.Parse(TextBoxIloscFunt.Text) != float.Parse(Zasoby[3]))
             {
                 MessageBox.Show("Masz tyle ile zakupiłeś! Zostaw tego Boxa w spokoju...");
                 TextBoxIloscFunt.Text = Zasoby[1].ToString();
@@ -182,6 +240,73 @@ namespace EKantor
 
         }
 
-       
+        private void TextBoxIleSprzedacEuro_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                float sprIlosc = float.Parse(TextBoxIleSprzedacEuro.Text);
+                if (sprIlosc <= float.Parse(Zasoby[1])) 
+                {
+                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIleSprzedacEuro.Text) * CenaSprzedazyEuro).ToString();
+                }
+                if (sprIlosc > float.Parse(Zasoby[1]))
+                {
+                    MessageBox.Show("Nie można sprzedać więcej niż się posiada... a szkoda :P");
+                    TextBoxIleSprzedacEuro.Text = "0";
+                    TextBoxCenaEuro.Text = "0";
+                }
+            }
+            catch (Exception)
+            {
+                TextBoxCenaEuro.Text = "";
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
+            }
+        }
+
+        private void TextBoxIleSprzedacDolar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                float sprIlosc = float.Parse(TextBoxIleSprzedacDolar.Text);
+                if (sprIlosc <= float.Parse(Zasoby[2]))
+                {
+                    TextBoxCenaDolar.Text = (float.Parse(TextBoxIleSprzedacDolar.Text) * CenaSprzedazyDolara).ToString();
+                }
+                if (sprIlosc > float.Parse(Zasoby[2]))
+                {
+                    MessageBox.Show("Nie można sprzedać więcej niż się posiada... a szkoda :P");
+                    TextBoxIleSprzedacDolar.Text = "0";
+                    TextBoxCenaDolar.Text = "0";
+                }
+            }
+            catch (Exception)
+            {
+                TextBoxCenaEuro.Text = "";
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
+            }
+        }
+
+        private void TextBoxIleSprzedacFunt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                float sprIlosc = float.Parse(TextBoxIleSprzedacFunt.Text);
+                if (sprIlosc <= float.Parse(Zasoby[3]))
+                {
+                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIleSprzedacFunt.Text) * CenaSprzedazyFunta).ToString();
+                }
+                if (sprIlosc > float.Parse(Zasoby[3]))
+                {
+                    MessageBox.Show("Nie można sprzedać więcej niż się posiada... a szkoda :P");
+                    TextBoxIleSprzedacFunt.Text = "0";
+                    TextBoxCenaFunt.Text = "0";
+                }
+            }
+            catch (Exception)
+            {
+                TextBoxCenaEuro.Text = "";
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
+            }
+        }
     }
 }

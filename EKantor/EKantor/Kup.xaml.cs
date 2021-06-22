@@ -36,6 +36,9 @@ namespace EKantor
             CenaZakupuDolara = float.Parse(Ceny[6]);
             CenaZakupuFunta = float.Parse(Ceny[10]); 
             TextBoxWolneSrodki.Text = Zasoby[0].ToString();
+            TextBoxIloscEuro.Text = "0";
+            TextBoxIloscDolar.Text = "0";
+            TextBoxIloscFunt.Text = "0";
         }
 
         private void btnAnuluj_Click(object sender, RoutedEventArgs e)
@@ -237,7 +240,7 @@ namespace EKantor
                 float sprIlosc = (float.Parse(TextBoxIloscDolar.Text) * CenaZakupuDolara);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
-                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIloscDolar.Text) * CenaZakupuDolara).ToString();
+                    TextBoxCenaDolar.Text = (float.Parse(TextBoxIloscDolar.Text) * CenaZakupuDolara).ToString();
                 }
                 if (sprIlosc > float.Parse(Zasoby[0]))
                 {
@@ -281,7 +284,7 @@ namespace EKantor
                 float sprIlosc = (float.Parse(TextBoxIloscFunt.Text) * CenaZakupuFunta);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
-                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIloscFunt.Text) * CenaZakupuFunta).ToString();
+                    TextBoxCenaFunt.Text = (float.Parse(TextBoxIloscFunt.Text) * CenaZakupuFunta).ToString();
                 }
                 if (sprIlosc > float.Parse(Zasoby[0]))
                 {
