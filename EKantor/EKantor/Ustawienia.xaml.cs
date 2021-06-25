@@ -62,7 +62,7 @@ namespace EKantor
             swZ.Close();
 
             ///resetowanie Ceny
-            StreamWriter swC = File.CreateText("Zasoby.txt");
+            StreamWriter swC = File.CreateText("Cenowy.txt");
             swC.WriteLine(ResetCeny[0]);
             swC.WriteLine(ResetCeny[1]);
             swC.WriteLine(ResetCeny[2]);

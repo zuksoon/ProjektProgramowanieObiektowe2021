@@ -116,7 +116,7 @@ namespace EKantor
             Random rndEuro = new Random();
             Random rndEuroSecondRandom = new Random();
             int euroPlusMinus = 1;
-            if(rndEuro.NextDouble() * rndEuroSecondRandom.NextDouble() > 0.5)
+            if(rndEuro.NextDouble() * rndEuroSecondRandom.NextDouble() > 0.4)
             {
                 euroPlusMinus = 1 ;
             }
@@ -130,7 +130,7 @@ namespace EKantor
             Random rndDolar = new Random();
             Random rndDolarSecondRandom = new Random();
             int dolarPlusMinus = 1;
-            if (rndDolar.NextDouble() * rndDolarSecondRandom.NextDouble() > 0.5)
+            if (rndDolar.NextDouble() * rndDolarSecondRandom.NextDouble() > 0.4)
             {
                 dolarPlusMinus = 1;
             }
@@ -144,13 +144,13 @@ namespace EKantor
             Random rndFunt = new Random();
             Random rndFuntSecondRandom = new Random();
             int funtPlusMinus = 1;
-            if (rndFunt.NextDouble() * rndFuntSecondRandom.NextDouble() > 0.3)
+            if (rndFunt.NextDouble() * rndFuntSecondRandom.NextDouble() > 0.4)
             {
-                euroPlusMinus = 1;
+                funtPlusMinus = 1;
             }
             else
             {
-                euroPlusMinus = -1;
+                funtPlusMinus = -1;
             }
             double mnoznikFuntDouble = rndEuro.NextDouble();
             float mnoznikFunt = (float)mnoznikEuroDouble % 0.05f;
