@@ -260,10 +260,10 @@ namespace EKantor
         {
             try
             {
-                float sprIlosc = float.Parse(TextBoxCenaEuro.Text);
+                float sprIlosc = float.Parse(TextBoxCenaDolar.Text);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
-                    TextBoxIloscEuro.Text = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro).ToString();
+                    TextBoxIloscDolar.Text = (float.Parse(TextBoxCenaDolar.Text) / CenaZakupuDolara).ToString();
                 }
                 if (sprIlosc > float.Parse(Zasoby[0]))
                 {
@@ -273,7 +273,7 @@ namespace EKantor
             catch (Exception)
             {
                 TextBoxIloscDolar.Text = "";
-                MessageBox.Show("Wprowadzono niepoprawne dane, nalezy wprowadzić cyfrę!");
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
             }
         }
 
@@ -304,10 +304,10 @@ namespace EKantor
         {
             try
             {
-                float sprIlosc = float.Parse(TextBoxCenaEuro.Text);
+                float sprIlosc = float.Parse(TextBoxCenaFunt.Text);
                 if (sprIlosc <= float.Parse(Zasoby[0]))
                 {
-                    TextBoxIloscEuro.Text = (float.Parse(TextBoxCenaEuro.Text) / CenaZakupuEuro).ToString();
+                    TextBoxIloscFunt.Text = (float.Parse(TextBoxCenaFunt.Text) / CenaZakupuFunta).ToString();
                 }
                 if (sprIlosc > float.Parse(Zasoby[0]))
                 {
@@ -317,7 +317,7 @@ namespace EKantor
             catch (Exception)
             {
                 TextBoxIloscFunt.Text = "";
-                MessageBox.Show("Wprowadzono niepoprawne dane, nalezy wprowadzić cyfrę!");
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
             }
         }
     }

@@ -14,17 +14,17 @@
         <RadioButton x:Name="RBFunt" Content="Funt" HorizontalAlignment="Left" Margin="33,227,0,0" VerticalAlignment="Top" FontSize="16" Checked="RBFunt_Checked"/>
         <Label Content="Ilość posiadanej waluty" HorizontalAlignment="Left" Margin="127,86,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Cena" HorizontalAlignment="Left" Margin="507,86,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="TextBoxIloscEuro" HorizontalAlignment="Left" Margin="153,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscEuro_TextChanged" />
-        <TextBox x:Name="TextBoxIloscDolar" HorizontalAlignment="Left" Margin="153,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscDolar_TextChanged" />
-        <TextBox x:Name="TextBoxIloscFunt" HorizontalAlignment="Left" Margin="153,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscFunt_TextChanged" />
-        <TextBox x:Name="TextBoxCenaEuro" HorizontalAlignment="Left" Margin="470,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaEuro_TextChanged" />
-        <TextBox x:Name="TextBoxCenaDolar" HorizontalAlignment="Left" Margin="470,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaDolar_TextChanged" />
-        <TextBox x:Name="TextBoxCenaFunt" HorizontalAlignment="Left" Margin="470,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaFunt_TextChanged"/>
+        <TextBox x:Name="TextBoxIloscEuro" HorizontalAlignment="Left" Margin="153,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscEuro_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxIloscDolar" HorizontalAlignment="Left" Margin="153,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscDolar_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxIloscFunt" HorizontalAlignment="Left" Margin="153,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIloscFunt_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxCenaEuro" HorizontalAlignment="Left" Margin="470,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaEuro_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxCenaDolar" HorizontalAlignment="Left" Margin="470,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaDolar_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxCenaFunt" HorizontalAlignment="Left" Margin="470,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxCenaFunt_TextChanged" Visibility="Hidden"/>
         <Button x:Name="btnOK" Content="Sprzedaj" HorizontalAlignment="Left" Margin="371,301,0,0" VerticalAlignment="Top" FontSize="18" Width="100" Click="btnOK_Click" Height="40"/>
         <Button x:Name="btnAnuluj" Content="Anuluj" HorizontalAlignment="Left" Margin="103,307,0,0" VerticalAlignment="Top" FontSize="18" Width="70" Click="btnAnuluj_Click"/>
         <Label Content="Ile chcesz sprzedać" HorizontalAlignment="Left" Margin="309,86,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="TextBoxIleSprzedacEuro" HorizontalAlignment="Left" Margin="321,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIleSprzedacEuro_TextChanged" />
-        <TextBox x:Name="TextBoxIleSprzedacDolar" HorizontalAlignment="Left" Margin="321,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIleSprzedacDolar_TextChanged" />
-        <TextBox x:Name="TextBoxIleSprzedacFunt" HorizontalAlignment="Left" Margin="321,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIleSprzedacFunt_TextChanged"/>
+        <TextBox x:Name="TextBoxIleSprzedacEuro" HorizontalAlignment="Left" Margin="321,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIleSprzedacEuro_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxIleSprzedacDolar" HorizontalAlignment="Left" Margin="321,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIleSprzedacDolar_TextChanged" Visibility="Hidden" />
+        <TextBox x:Name="TextBoxIleSprzedacFunt" HorizontalAlignment="Left" Margin="321,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" TextChanged="TextBoxIleSprzedacFunt_TextChanged" Visibility="Hidden"/>
     </Grid>
 </Window>

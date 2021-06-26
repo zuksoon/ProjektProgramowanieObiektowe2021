@@ -40,6 +40,10 @@ namespace EKantor
             TextBoxIloscEuro.Text = Zasoby[1].ToString();
             TextBoxIloscDolar.Text = Zasoby[2].ToString();
             TextBoxIloscFunt.Text = Zasoby[3].ToString();
+
+            TextBoxIleSprzedacEuro.Text = "0";
+            TextBoxIleSprzedacDolar.Text = "0";
+            TextBoxIleSprzedacFunt.Text = "0";
         }
 
         private void btnAnuluj_Click(object sender, RoutedEventArgs e)
@@ -227,17 +231,53 @@ namespace EKantor
 
         private void TextBoxCenaEuro_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            try
+            {
+                float sprIlosc = float.Parse(TextBoxCenaEuro.Text) / CenaSprzedazyEuro;
+                if (sprIlosc <= float.Parse(TextBoxIleSprzedacEuro.Text))
+                {
+                    TextBoxIleSprzedacEuro.Text = (float.Parse(TextBoxCenaEuro.Text) / CenaSprzedazyEuro).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                TextBoxIleSprzedacEuro.Text = "0";
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
+            }
         }
 
         private void TextBoxCenaDolar_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            try
+            {
+                float sprIlosc = float.Parse(TextBoxCenaDolar.Text) / CenaSprzedazyDolara;
+                if (sprIlosc <= float.Parse(TextBoxIleSprzedacEuro.Text)) 
+                {
+                    TextBoxIleSprzedacEuro.Text = (float.Parse(TextBoxCenaDolar.Text) / CenaSprzedazyDolara).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                TextBoxIleSprzedacDolar.Text = "0";
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
+            }
         }
 
         private void TextBoxCenaFunt_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            try
+            {
+                float sprIlosc = float.Parse(TextBoxCenaFunt.Text) / CenaSprzedazyFunta;
+                if (sprIlosc <= float.Parse(TextBoxIleSprzedacFunt.Text)) 
+                {
+                    TextBoxIleSprzedacEuro.Text = (float.Parse(TextBoxCenaFunt.Text) / CenaSprzedazyFunta).ToString();
+                }
+            }
+            catch (Exception)
+            {
+                TextBoxIleSprzedacFunt.Text = "0";
+                MessageBox.Show("Wprowadzono niepoprawne informacje, nalezy wprowadzić cyfrę!");
+            }
         }
 
         private void TextBoxIleSprzedacEuro_TextChanged(object sender, TextChangedEventArgs e)
@@ -293,7 +333,7 @@ namespace EKantor
                 float sprIlosc = float.Parse(TextBoxIleSprzedacFunt.Text);
                 if (sprIlosc <= float.Parse(Zasoby[3]))
                 {
-                    TextBoxCenaEuro.Text = (float.Parse(TextBoxIleSprzedacFunt.Text) * CenaSprzedazyFunta).ToString();
+                    TextBoxCenaFunt.Text = (float.Parse(TextBoxIleSprzedacFunt.Text) * CenaSprzedazyFunta).ToString();
                 }
                 if (sprIlosc > float.Parse(Zasoby[3]))
                 {
